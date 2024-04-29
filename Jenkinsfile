@@ -20,5 +20,11 @@ pipeline {
         bat 'npm run build' // Build the project using npm (Windows)
       }
     }
+
+    stage("Build Image") {
+      steps{
+        bat 'docker build -t my-node-app:2.0 .'
+      }
+    }
   }
 }
